@@ -5,7 +5,8 @@ from sqlalchemy.sql.expression import text
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 
 class Post(Base):
-    __tablename__ = "postss"
+    # __tablename__ = "postss"
+    __tablename__ = "postssd"
 
     id = Column(Integer, primary_key=True, nullable=False)
     title = Column(String, nullable=False)
@@ -17,7 +18,8 @@ class Post(Base):
     owner = relationship("User")
 
 class User(Base):
-    __tablename__ = 'users'
+    # __tablename__ = 'users'
+    __tablename__ = 'userss'
 
     id = Column(Integer, primary_key=True, nullable=False)
     email = Column(String, nullable=False, unique=True)
