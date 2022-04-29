@@ -17,7 +17,7 @@ print(settings.database_password)
 app = FastAPI()
 
 origins = [
-    'https://www.google.com'
+    '*'
 ]
 app.add_middleware(
     CORSMiddleware,

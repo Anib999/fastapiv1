@@ -1,4 +1,4 @@
-"""all leftovers in postssd
+"""all leftovers in posts
 
 Revision ID: 38eab75621a2
 Revises: cbbb25aebac1
@@ -17,12 +17,12 @@ depends_on = None
 
 
 def upgrade():
-    op.add_column('postssd', sa.Column('published', sa.Boolean(), nullable=False, server_default="TRUE"),)
-    op.add_column('postssd', sa.Column('created_at', sa.TIMESTAMP(timezone=True ), nullable=False, server_default=sa.text('NOW()')),)
+    op.add_column('posts', sa.Column('published', sa.Boolean(), nullable=False, server_default="TRUE"),)
+    op.add_column('posts', sa.Column('created_at', sa.TIMESTAMP(timezone=True ), nullable=False, server_default=sa.text('NOW()')),)
     pass
 
 
 def downgrade():
-    op.drop_column('postssd', 'published')
-    op.drop_column('postssd', 'created_at')
+    op.drop_column('posts', 'published')
+    op.drop_column('posts', 'created_at')
     pass
