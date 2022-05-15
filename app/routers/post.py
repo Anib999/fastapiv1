@@ -135,9 +135,9 @@ def update_poster(id: int, post: schemas.Post, db: Session = Depends(get_db)):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail=f'{id} not found')
 
-    if new_post.owner_id != oauth2.get_current_user.id:
-        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=f'Not Authorized')
+    # if new_post.owner_id != oauth2.get_current_user.id:
+    #     raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=f'Not Authorized')
 
     new_post.update(post.dict(), synchronize_session=False)
     db.commit()
-    return {'message': new_post.first()}
+    return new_post.first()
