@@ -7,7 +7,7 @@ jobs:
     environment: 
       name: testing
     env:
-      DATABASE_NAME: localhost
+      DATABASE_HOSTNAME: localhost
       DATABASE_PORT: 5432
       DATABASE_NAME: fastapi
       DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
