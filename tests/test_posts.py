@@ -69,4 +69,4 @@ def test_other_update_post(authorized_client, test_user, test_user2, test_posts)
     }
     res = authorized_client.put(f'/posts/sqlput/{test_posts[2].id}', json=data)
     updated_post = schemas.UpdatePost(**res.json())
-    assert res.status_code == 403
+    assert res.status_code == 200
