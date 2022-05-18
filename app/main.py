@@ -49,7 +49,7 @@ app.include_router(votes.router)
 
 @app.get("/")
 async def root():
-    return {"message": "Hello chicks api"}
+    return {"message": "Hello chicks api ~~ deployed from CI/cd finally"}
 
 @app.get('/login')
 def login_usr():
